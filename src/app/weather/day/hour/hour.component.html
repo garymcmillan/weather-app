@@ -1,0 +1,14 @@
+<div *ngIf="hour">
+    <p>
+      Desc: {{hour.weather[0].description}}
+    </p>
+    <p>
+      Min Temp: {{hour.main.temp_min}}
+    </p>
+    <p>
+      Max Temp: {{hour.main.temp_max}}
+    </p>
+    <p>
+      Wind: {{hour.wind.speed}}mph, {{hour.wind.deg}}&deg;
+    </p>
+</div>

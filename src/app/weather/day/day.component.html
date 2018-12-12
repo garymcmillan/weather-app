@@ -1,0 +1,8 @@
+<div *ngIf="day">
+  <ul>
+      <li *ngFor="let hour of day.hours; let i = index" (click)="selectHour(hour)">
+        <p>{{ hour.dt_txt | getHourPipe }}</p>
+      </li>
+    </ul>
+    <app-hour></app-hour>
+</div>

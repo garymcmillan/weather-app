@@ -1,0 +1,10 @@
+<div *ngIf="forecast">
+  <h1>{{forecast.city.name}}, {{forecast.city.country}}</h1>
+  <ul>
+    <li *ngFor="let day of days; let i = index" (click)="selectDay(day)">
+      <h2>{{ day.date | dotwPipe }}</h2>
+    </li>
+  </ul>
+  
+  <app-day></app-day>
+</div>
