@@ -14,7 +14,6 @@ import { SearchLocationComponent } from './search-location/search-location.compo
 import { WeatherComponent } from './weather/weather.component';
 import { DayComponent } from './weather/day/day.component';
 import { HourComponent } from './weather/day/hour/hour.component';
-import { ListComponent } from './list/list.component';
 import { DotwPipe } from './shared/pipes/dotw.pipe';
 import { GetHourPipe } from './shared/pipes/get-hour.pipe';
 
@@ -25,7 +24,6 @@ import { GetHourPipe } from './shared/pipes/get-hour.pipe';
     WeatherComponent,
     DayComponent,
     HourComponent,
-    ListComponent,
     DotwPipe,
     GetHourPipe
   ],
@@ -36,10 +34,10 @@ import { GetHourPipe } from './shared/pipes/get-hour.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducers),
-        EffectsModule.forRoot([WeatherEffects]),
-        StoreDevtoolsModule.instrument({
-            maxAge: 5
-        })
+    EffectsModule.forRoot([WeatherEffects]),
+    StoreDevtoolsModule.instrument({
+        maxAge: 5
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

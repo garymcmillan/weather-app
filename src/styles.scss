@@ -1,5 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+h1 {
+  margin: 20px 0;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
 li {
-    display: inline-block;
-    padding-right: 10px;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.clickable {
+  cursor: pointer;
+
+  &:hover, &.active {
+    color: #999;
+  }
 }

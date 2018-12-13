@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 import { Subject } from 'rxjs';
 import * as fromApp from '../store/reducers/app.reducers';
 import { takeUntil } from 'rxjs/operators';
-import { DayModel } from '../shared/models/day.model';
+import { DayModel } from '../shared/models/forecast.model';
 import * as WeatherAction from '../store/actions/weather.actions';
 
 @Component({
@@ -19,8 +19,8 @@ export class WeatherComponent implements OnInit, OnDestroy {
   constructor(private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
-    const weatherState = this.store.select('weather');
-    weatherState
+    const weatherSubscription = this.store.select('weather');
+      weatherSubscription
     .pipe(takeUntil(this.ngUnsubscribe))
     .subscribe((weatherState) => {
       this.forecast = weatherState.forecast;
@@ -40,7 +40,6 @@ export class WeatherComponent implements OnInit, OnDestroy {
 
   /**
    * Ensure that we only display the 5 day forecast
-   * @param forecast 
    */
   groupDays(forecast) {
 

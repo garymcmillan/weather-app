@@ -1,5 +1,6 @@
 import {Action} from '@ngrx/store';
-import { DayModel, HourModel } from 'src/app/shared/models/day.model';
+import { DayModel, HourModel } from 'src/app/shared/models/forecast.model';
+import {ForecastModel} from '../../shared/models/forecast.model';
 
 export const GET_FILES = 'GET_FORCAST';
 export const SET_FILES = 'SET_FORECAST';
@@ -15,7 +16,7 @@ export class GetForecast implements  Action {
 export class SetForecast implements Action {
     readonly type = 'SET_FORECAST';
 
-    constructor(public payload) {}
+    constructor(public payload: ForecastModel) {}
 }
 
 export class SetDay implements Action {

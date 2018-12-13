@@ -1,10 +1,18 @@
-<div *ngIf="forecast">
-  <h1>{{forecast.city.name}}, {{forecast.city.country}}</h1>
-  <ul>
-    <li *ngFor="let day of days; let i = index" (click)="selectDay(day)">
-      <h2>{{ day.date | dotwPipe }}</h2>
-    </li>
-  </ul>
-  
-  <app-day></app-day>
+<div *ngIf="forecast" class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li
+                *ngFor="let day of days; let i = index"
+                (click)="selectDay(day)"
+                class="nav-item clickable">
+                    <span class="nav-link">{{ day.date | dotwPipe }}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <app-day></app-day>
+        </div>
+    </div>
 </div>
+

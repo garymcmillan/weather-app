@@ -1,10 +1,11 @@
 import * as AppActions from '../actions/weather.actions';
-import { DayModel, HourModel } from 'src/app/shared/models/day.model';
+import { DayModel, HourModel } from 'src/app/shared/models/forecast.model';
+import {ForecastModel} from '../../shared/models/forecast.model';
 
 export interface State {
-    forecast;
+    forecast: ForecastModel;
     day: DayModel;
-    hour: HourModel
+    hour: HourModel;
 }
 const initialState = {
     forecast: null,

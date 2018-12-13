@@ -28,10 +28,10 @@ export class SearchLocationComponent implements OnInit {
     });
   }
 
-  onSubmit() {;
+  onSubmit() {
     const location = {
       city: this.searchForm.value.location,
-      country: 'uk' 
+      country: 'uk'
     };
     this.store.dispatch(new weatherActions.GetForecast(location));
   }

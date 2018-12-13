@@ -6,7 +6,7 @@ import {of} from 'rxjs';
 import * as FilesActions from '../actions/weather.actions';
 import {Store} from '@ngrx/store';
 import * as fromApp from '../reducers/app.reducers';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Injectable()
 export class WeatherEffects {
@@ -32,7 +32,7 @@ export class WeatherEffects {
                     map((errors) => {
                         return errors;
                     }))
-                );;
+                );
             }),
             map(
                 (res: any) => {
