@@ -1,13 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WeatherComponent } from './weather.component';
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import {Store} from '@ngrx/store';
-import { Subject } from 'rxjs';
-import * as fromApp from '../store/reducers/app.reducers';
-import { takeUntil } from 'rxjs/operators';
-import { DayModel } from '../shared/models/forecast.model';
-import * as WeatherAction from '../store/actions/weather.actions';
 import { DotwPipe } from '../shared/pipes/dotw.pipe';
 import { DayComponent } from './day/day.component';
 import { HourComponent } from './day/hour/hour.component';

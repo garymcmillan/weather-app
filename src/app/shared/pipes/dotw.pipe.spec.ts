@@ -5,10 +5,10 @@ describe('Day of the Week Pipe', () => {
 
     beforeEach(() => {
         pipe = new DotwPipe();
-    })
+    });
 
     it('should return the day of the week', () => {
         expect(pipe.transform('2018-12-17')).toBe('Monday');
-    })
+    });
 
 });

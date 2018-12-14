@@ -11,6 +11,10 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class SearchLocationComponent implements OnInit {
   searchForm: FormGroup;
+  availableCountries = [
+        'uk',
+        'us'
+    ];
 
   constructor(private store: Store<fromApp.AppState>) { }
 
@@ -24,16 +28,21 @@ export class SearchLocationComponent implements OnInit {
     }
 
     this.searchForm = new FormGroup({
-      location: new FormControl('', Validators.required)
+      location: new FormControl('', Validators.required),
+      country: new FormControl('-1', Validators.required)
     });
   }
 
   onSubmit() {
-    const location = {
-      city: this.searchForm.value.location,
-      country: 'uk'
-    };
-    this.store.dispatch(new weatherActions.GetForecast(location));
+    if (this.searchForm.value.country !== -1) {
+      const location = {
+        city: this.searchForm.value.location,
+        country: this.availableCountries[this.searchForm.value.country]
+      };
+      this.store.dispatch(new weatherActions.GetForecast(location));
+    } else {
+      window.alert('Please select a country');
+    }
   }
 
 }
